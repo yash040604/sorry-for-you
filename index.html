@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>I'm Sorry ❤️</title>
+    <title>Sorry Sreeja ❤️</title>
     <style>
         body {
             background: black;
             color: white;
             text-align: center;
-            font-family: Arial;
+            font-family: 'Courier New', monospace;
             padding-top: 100px;
         }
         .box {
             border: 2px solid white;
-            padding: 25px;
+            padding: 30px;
             display: inline-block;
             border-radius: 15px;
+            max-width: 500px;
+        }
+        #text {
+            font-size: 18px;
+            white-space: pre-line;
         }
         button {
             margin-top: 20px;
@@ -30,18 +35,37 @@
 <body>
 
 <div class="box">
-    <h2>if (love == true) ❤️</h2>
-    <p>I know I messed up...</p>
-    <p>I never meant to hurt you.</p>
-    <p><b>I'm really sorry.</b></p>
-    <p>You mean everything to me.</p>
-
-    <button onclick="showMessage()">Click if you still love me ❤️</button>
+    <h2>Dear Sreeja ❤️</h2>
+    <p id="text"></p>
+    <button onclick="finalMessage()">One last thing...</button>
 </div>
 
 <script>
-function showMessage() {
-    alert("I promise I'll be better. Please don't give up on us ❤️");
+const message = `I know I hurt you...
+And I hate that I did.
+
+You're not just someone in my life,
+you're someone I never want to lose.
+
+No ego, no excuses...
+just me, accepting my mistake.
+
+I'm really sorry, Sreeja.
+
+— Yashwanth ❤️`;
+
+let i = 0;
+function typeEffect() {
+    if (i < message.length) {
+        document.getElementById("text").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeEffect, 40);
+    }
+}
+typeEffect();
+
+function finalMessage() {
+    alert("I’ll prove my love through actions, not just words. Please give me one chance ❤️");
 }
 </script>
 
